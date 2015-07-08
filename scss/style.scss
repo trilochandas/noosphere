@@ -1,0 +1,578 @@
+*{
+	box-sizing: border-box;
+}
+ul{
+	padding: 0;
+	margin: 0;
+	li{
+		list-style: none;
+	}
+}
+$color1 : #ff9710;
+$color2 : #ffa352;
+$color3 : #4e4e4e;
+$color4 : #cfcfcf;
+.clear{
+	clear: both;
+}
+.inner{
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 0 10px;
+}
+body{
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 300;
+}
+.link{
+	color: $color2;
+}
+
+/* ********************
+HEADER  
+***********************/
+header .logo{
+	text-align: center;
+	margin-top: 17px;
+	margin-bottom: 7px;
+}
+
+
+/* ********************
+SLIDER-FORM 
+***********************/
+
+.slider-form{
+	background: $color1;
+	overflow: hidden;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	#slider1_container{
+		position: relative; 
+		float: left;
+		top: 0px;
+		left: 0px;
+		overflow: hidden;
+		width: 50%;
+		height: 466px;
+		box-shadow: 0 0 1px #333;
+		border-top-left-radius: 4px;
+		border-bottom-left-radius: 4px;
+		@media screen and (max-width: 980px) {
+			margin: 0 auto;
+			float: none;
+			margin-bottom: 2em;
+		}
+		@media screen and (max-width: 910px) {
+			width: 65%;
+		}
+		@media screen and (max-width: 650px) {
+			width: 75%;
+		}
+		.img_container{
+			cursor: move;
+			position: absolute;
+			overflow: hidden;
+			left: 0px;
+			top: 0px;
+			width: 479px;
+			height: 466px;
+		}
+		/* jssor slider bullet navigator skin 21 css */
+		/*
+		.jssorb21 div           (normal)
+		.jssorb21 div:hover     (normal mouseover)
+		.jssorb21 .av           (active)
+		.jssorb21 .av:hover     (active mouseover)
+		.jssorb21 .dn           (mousedown)
+		*/
+		.jssorb21 {
+			position: absolute;
+			left: 50%;
+			margin-left: -27px;
+			width: 100px;
+			height: 19px;
+			top: 427px;
+			& div, & div:hover, & .av {
+				position: absolute;
+				/* size of bullet elment */
+				width: 19px;
+				height: 19px;
+				text-align: center;
+				line-height: 19px;
+				color: white;
+				font-size: 12px;
+				background: url(../img/b12.png) no-repeat;
+				overflow: hidden;
+				cursor: pointer;
+			}
+			& div {
+				background-position: -5px -5px;
+			}
+			& div:hover, & .av:hover {
+				background-position: -35px -5px;
+			}
+			& .av {
+				background-position: -65px -5px;
+			}
+			& .dn, & .dn:hover {
+				background-position: -95px -5px;
+			}
+		}
+	} /* finish .slider-form */
+	form{
+		float: left;
+		background-color: #fff;
+		width: 50%;
+		@media screen and (max-width: 980px) {
+			margin: 0 auto;
+			float: none;
+			width: 100%;
+		}
+		h2{
+			background: -webkit-linear-gradient(#fff6ee, #FF8414);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			font-weight: 300;
+			font-size: 2.625em;
+			margin: 0;
+
+		}
+		.get-name{
+			input{
+				width: 68.08510638297872%;
+				height: 36px;
+				box-shadow: 0 0 1px 1px #dfc1c1;
+				border-radius: 10px;
+				border: none;
+				/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cdcece+0,f5fafb+100 */
+				background: #cdcece; /* Old browsers */
+				background: -moz-linear-gradient(top,  #cdcece 0%, #f5fafb 100%); /* FF3.6+ */
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cdcece), color-stop(100%,#f5fafb)); 					/* Chrome,Safari4+ */
+				background: -webkit-linear-gradient(top,  #cdcece 0%,#f5fafb 100%); /* Chrome10+,Safari5.1+ */
+				background: -o-linear-gradient(top,  #cdcece 0%,#f5fafb 100%); /* Opera 11.10+ */
+				background: -ms-linear-gradient(top,  #cdcece 0%,#f5fafb 100%); /* IE10+ */
+				background: linear-gradient(to bottom,  #cdcece 0%,#f5fafb 100%); /* W3C */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cdcece', endColorstr='#f5fafb',GradientType=0 ); /* IE6-9 */
+
+
+			}
+		}
+		@mixin customize() {
+			content: "";
+			display: inline-block;
+			height: 14px;
+			width: 14px;
+			background: url(../img/choise-sprite.jpg);
+			background-repeat: no-repeat;
+		}
+		.extra-options{
+			input[type="checkbox"] {
+				display: none;
+				& + label {
+					cursor: pointer;
+					&::before{
+						@include customize;
+						background-position-x: -14px; 
+					}
+				}
+				&:checked + label::before {
+					background-position-x: 0px; 
+				}
+			}
+			input[type="radio"] {
+				display: none;
+				& + label {
+					cursor: pointer;
+					&::before{
+						@include customize;
+						background-position: -14px -14px;
+					}
+				}
+				&:checked + label::before {
+					background-position: 0px -14px;
+				}
+			}
+		}
+//		submit
+		.submit{
+			cursor: pointer;
+			width: 320px;
+			height: 70px;
+			border-radius: 50px;
+			font-size: 3em;
+			font-weight: 200;
+			color: #fff;
+			border: none;
+			/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#abc834+0,abc834+50,88bc0d+51,88bc0d+100 */
+			background: #abc834; /* Old browsers */
+			background: -moz-linear-gradient(top,  #abc834 0%, #abc834 50%, #88bc0d 51%, #88bc0d 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#abc834), color-stop(50%,#abc834), color-stop(51%,#88bc0d), color-stop(100%,#88bc0d)); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top,  #abc834 0%,#abc834 50%,#88bc0d 51%,#88bc0d 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top,  #abc834 0%,#abc834 50%,#88bc0d 51%,#88bc0d 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top,  #abc834 0%,#abc834 50%,#88bc0d 51%,#88bc0d 100%); /* IE10+ */
+			background: linear-gradient(to bottom,  #abc834 0%,#abc834 50%,#88bc0d 51%,#88bc0d 100%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#abc834', endColorstr='#88bc0d',GradientType=0 ); /* IE6-9 */
+		}
+	} /* finish form */
+}
+
+/* ********************
+MAIN 
+***********************/
+
+@mixin h3($m1, $m2) {
+	font-size: 2em;
+	color: #4e4e4e;
+	font-weight: 300;
+	margin: $m1 0 $m2 0;
+}
+.main{
+	margin-bottom: 50px;
+	.info1{
+		width: 50%;
+		float: left;
+		@media screen and (max-width: 910px) {
+			width: 100%;
+		}
+		h3{
+			@include h3(45px, 30px);
+		}
+		img{
+			shape-outside: circle();
+			float: left;
+			margin-right: 1em;
+			margin-left: -10px;
+		}
+		p{
+			font-size: 14px;
+			line-height: 22px;
+			@media screen and (max-width: 910px) {
+				font-size: 22px;
+				line-height: 30px;
+			}
+		}
+	} /* finish .info1 */
+	.usersList {
+		width: 50%;
+		float: left;
+		padding-left: 7.4468085106383%;
+		@media screen and (max-width: 980px) {
+			padding-left: 6%;
+		}
+		@media screen and (max-width: 980px) {
+			padding-left: 6%;
+		}
+		@media screen and (max-width: 910px) {
+			padding: 0;
+			width: 100%;
+			margin-bottom: 2em;
+		}
+		h3 {
+			@include h3(45px, 30px);
+		}
+		.carousel {
+			position: relative;
+			top: 0px;
+			left: 0px;
+			width: 390px;
+			height: 70px;
+			margin-bottom: 20px;
+		}
+		.carousel_container{
+			position: absolute;
+			overflow: hidden;
+			left: 0px;
+			top: 0px;
+			width: 390px;
+			height: 70px;
+			.img-container{
+				&:hover .hover-img {
+					visibility: visible;
+					opacity: 1;
+				}
+				.hover-img{
+					visibility: hidden;
+					opacity: 0;
+					background: rgba(0, 0, 0, 0.5);
+					color: #fff;
+					font-size: 14px;
+					text-align: center;
+					height: 100%;
+					position: absolute;
+					width: 100%;
+					transition: all 0.3s ease;
+					p {
+						font-size: 16px;
+						margin: 15px 0 8px 0;
+					}
+				}
+			}
+		}
+		.left_arrow, .right_arrow{
+			background: url(../img/carousel-sprite.jpg);
+			background-repeat: no-repeat;
+			width: 22px;
+			height: 20px;
+			position: absolute;
+			cursor: pointer;
+		}
+		.right_arrow{
+			background-position-x: -22px; 
+			right: -32px;
+		}
+		.left_arrow{
+			background-position-x: 0px;
+			left: -32px;
+		}
+		.tabs{
+			ul.pages{
+				padding: 0;
+				margin: 0;
+				li{
+					list-style: none;
+					display: inline-block;
+					margin-left: -3px;
+					a{
+						text-decoration: none;
+						color: #969696;
+						background: #f8f8f8;
+						display: block;
+						height: 33px;
+						width: 90px;
+						padding-top: 7px;
+						padding-left: 13px;
+						border-top-left-radius: 15px;
+						border-top-right-radius: 21px;
+						border: 1px solid #efefef;
+						&.active-tabs{
+							width: 170px;
+							color: $color2;
+							background: #fff;
+							border-bottom: none;
+							span{
+								color: #b9b9b9;
+							}
+						}
+					}
+					p{
+						margin: 0;
+					}
+				}
+			}
+			&>div{
+				border: 1px solid #cccccc;
+				padding: 1em;
+				margin-left: -3px;
+				  box-shadow: 0 1px 3px 0 #ccc;
+				&>div{
+					margin-bottom: 25px;
+				}
+			}
+//			progress bar
+			.ui-progressbar {
+				border: 1px solid #dcdcdc;
+				height: 14px;
+				padding: 1px;
+				border-radius: 3px;
+				position: relative;
+				width: 214px;
+				.progress-label{
+					position: absolute;
+					font-size: 9px;
+					width: 100%;
+					left: 50%;
+				}
+				.ui-progressbar-value{
+					height: 100%;
+					background: #ff9317;
+					border-radius: 3px;
+				}
+			}
+//			steps
+//			.steps{
+//				margin: 0;
+//				padding: 0;
+//				margin-bottom: 25px;
+//				li{
+//					display: inline-block;
+//					a{
+//						background: #c6c8c9;
+//						display: block;
+//						width: 36px;
+//						height: 28px;
+//						text-decoration: none;
+//						position: relative;
+//						font-size: 9px;
+//						padding: 9px 0;
+//						text-align: center;
+//						&:after{
+//						  border-top: 14px solid transparent;
+//						  border-left: 14px solid #c6c8c9;
+//						  border-bottom: 14px solid transparent;
+//						  content: "";
+//						  position: absolute;
+//						  right: -14px;
+//						  top: 0;
+//						}
+//						&:before{
+//							border-left: 14px solid red;
+//							border-top: 14px solid green;
+//							border-bottom: 14px solid yellow;
+//							content: "";
+//							position: absolute;
+//						}
+//					}
+//				}
+//			}
+//			ui-slider
+			.ui-slider{
+				border: 1px solid #dcdcdc;
+				height: 14px;
+				position: relative;
+				width: 215px;
+				.ui-slider-range{
+					height: 100%;
+					position: absolute;
+					background: #ff9317;
+				}
+				.ui-slider-handle{
+					background: url(../img/range-slid.png);
+					background-repeat: no-repeat;
+					width: 22px;
+					height: 27px;
+					position: absolute;
+					top: -7px;
+					margin-left: -11px;	
+					outline: none;
+				}
+			}
+			.stars{
+				ul{
+					li{
+						display: inline-block;
+						a{
+							display: block;
+							background: url(../img/star-sprite.png);
+							background-repeat: no-repeat;
+							width: 18px;
+							height: 16px;
+							background-position-x: -18px;
+							&.painted-star{
+								background-position-x: 0; 
+							}
+						}
+					}
+				}
+			}
+		} /* finish .tabs*/
+	} /* finish usersList */
+	.mainText{
+		clear: both;
+		h3{
+			@include h3(0, 15px);
+		}
+		.column{
+			-webkit-column-count: 3;
+			-webkit-column-gap: 20px;
+			font-size: 14px;
+			line-height: 22px;
+			min-height: 430px;
+			overflow: hidden;
+			@media screen and (max-width: 980px) {
+				-webkit-column-count: 2;
+				min-height: 650px;
+			}
+			@media screen and (max-width: 490px) {
+				-webkit-column-count: 2;
+				min-height: 830px;
+			}
+			@media screen and (max-width: 330px) {
+				-webkit-column-count: 1;
+				min-height: 830px;
+			}
+			
+			p{
+				margin: 0 0 2em 0;
+				&:firs-child{
+					margin-bottom: 20px;
+				}
+				&.importantText{
+					color: $color2;
+					border-left: 3px solid;
+					padding-left: 15px;
+					margin-bottom: 30px;
+				}
+			}
+			blockquote{
+				margin: 0 0 25px 0;
+				position: relative;
+				padding: 0 25px 0 30px;
+				color: #9a9a9a;
+				&:before, &:after{
+					position: absolute;
+					font-size: 72px;
+					color: #cfcfcf;
+				}
+				&:before{
+					content: "\201c";
+					left: 0;
+					top: 15px;
+				}
+				&:after{
+					content: "\201d";
+					right: 0;
+					bottom: -20px;
+				}
+			}
+			ol{
+				margin-bottom: 2em;
+				padding: 15px;
+				li{
+					margin-bottom: 15px;
+				}
+			}
+			a.more{
+				color: #ffb575;
+				background: url(../img/triangle-link.png);
+				background-repeat: no-repeat;
+				padding-left: 10px;
+				background-repeat: no-repeat;
+				background-position: 0 50%;
+				float: right;
+				&:before{
+				}
+			}
+		}
+	} /* finish .mainText */
+}
+
+/* ********************
+FOOTER
+***********************/
+footer{
+	padding-bottom: 25px;
+	hr.line{
+		margin: 0 0 20px 0;
+	}
+	.copyright{
+		float: right;
+		@media screen and (max-width: 330px) {
+			float: left;
+			margin-top: 1em ;
+		}
+		h4{
+			margin: 0;
+			font-size: 1.2em;
+			font-weight: 300;
+			text-align: right;
+			color: $color3;
+			@media screen and (max-width: 330px) {
+				text-align: left;
+			}
+			span{
+				color: $color4;
+			}
+		}
+	}
+} /* finish footer */

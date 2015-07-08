@@ -1,0 +1,109 @@
+/* line 1, ../scss/steps.scss */
+.breadcrumb {
+  list-style: none;
+  overflow: hidden;
+  font: 18px Helvetica, Arial, Sans-Serif; }
+
+/* line 6, ../scss/steps.scss */
+.breadcrumb li {
+  float: left; }
+
+/* line 9, ../scss/steps.scss */
+.breadcrumb li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 0 10px 55px;
+  background: brown;
+  /* fallback color */
+  background: #a5630d;
+  position: relative;
+  display: block;
+  float: left; }
+
+/* line 19, ../scss/steps.scss */
+.breadcrumb li a:after {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 50px solid transparent;
+  /* Go big on the size, and let overflow hide */
+  border-bottom: 50px solid transparent;
+  border-left: 30px solid #a5630d;
+  position: absolute;
+  top: 50%;
+  margin-top: -50px;
+  left: 100%;
+  z-index: 2; }
+
+/* line 33, ../scss/steps.scss */
+.breadcrumb li a:before {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 50px solid transparent;
+  /* Go big on the size, and let overflow hide */
+  border-bottom: 50px solid transparent;
+  border-left: 30px solid white;
+  position: absolute;
+  top: 50%;
+  margin-top: -50px;
+  margin-left: 1px;
+  left: 100%;
+  z-index: 1; }
+
+/* line 48, ../scss/steps.scss */
+.breadcrumb li:first-child a {
+  padding-left: 10px; }
+
+/* line 51, ../scss/steps.scss */
+.breadcrumb li:nth-child(2) a {
+  background: #d48011; }
+
+/* line 52, ../scss/steps.scss */
+.breadcrumb li:nth-child(2) a:after {
+  border-left-color: #d48011; }
+
+/* line 53, ../scss/steps.scss */
+.breadcrumb li:nth-child(3) a {
+  background: #ee992b; }
+
+/* line 54, ../scss/steps.scss */
+.breadcrumb li:nth-child(3) a:after {
+  border-left-color: #ee992b; }
+
+/* line 55, ../scss/steps.scss */
+.breadcrumb li:nth-child(4) a {
+  background: #f2b05a; }
+
+/* line 56, ../scss/steps.scss */
+.breadcrumb li:nth-child(4) a:after {
+  border-left-color: #f2b05a; }
+
+/* line 57, ../scss/steps.scss */
+.breadcrumb li:nth-child(5) a {
+  background: #f5c689; }
+
+/* line 58, ../scss/steps.scss */
+.breadcrumb li:nth-child(5) a:after {
+  border-left-color: #f5c689; }
+
+/* line 59, ../scss/steps.scss */
+.breadcrumb li:last-child a {
+  background: white !important;
+  color: black;
+  pointer-events: none;
+  cursor: default; }
+
+/* line 65, ../scss/steps.scss */
+.breadcrumb li:last-child a:after {
+  border: 0; }
+
+/* line 66, ../scss/steps.scss */
+.breadcrumb li a:hover {
+  background: #76470a; }
+
+/* line 67, ../scss/steps.scss */
+.breadcrumb li a:hover:after {
+  border-left-color: #76470a !important; }
