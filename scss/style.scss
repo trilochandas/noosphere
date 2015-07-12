@@ -47,35 +47,35 @@ SLIDER-FORM
 	overflow: hidden;
 	padding-top: 20px;
 	padding-bottom: 20px;
-	#slider1_container{
-		position: relative; 
+	.wrap-slid1{
+		width: 50%;
 		float: left;
+		box-shadow: 0 0 3px 0 #ccc;
+		@media screen and (max-width: 910px) {
+			width: 65%;
+			float: none;
+			margin: 0 auto 2em;
+		}
+		@media screen and (max-width: 400px) {
+			display: none;
+		}
+		#slider1_container{
+		position: relative; 
 		top: 0px;
 		left: 0px;
 		overflow: hidden;
-		width: 50%;
+		width: 100%;
 		height: 466px;
 		box-shadow: 0 0 1px #333;
 		border-top-left-radius: 4px;
 		border-bottom-left-radius: 4px;
-		@media screen and (max-width: 980px) {
-			margin: 0 auto;
-			float: none;
-			margin-bottom: 2em;
-		}
-		@media screen and (max-width: 910px) {
-			width: 65%;
-		}
-		@media screen and (max-width: 650px) {
-			width: 75%;
-		}
 		.img_container{
 			cursor: move;
 			position: absolute;
 			overflow: hidden;
 			left: 0px;
 			top: 0px;
-			width: 479px;
+			width: 100%;
 			height: 466px;
 		}
 		/* jssor slider bullet navigator skin 21 css */
@@ -120,6 +120,7 @@ SLIDER-FORM
 			}
 		}
 	} /* finish .slider-form */
+	}
 	form{
 		float: left;
 		background-color: #fff;
@@ -234,6 +235,7 @@ MAIN
 		float: left;
 		@media screen and (max-width: 910px) {
 			width: 100%;
+			padding: 1em;
 		}
 		h3{
 			@include h3(45px, 30px);
@@ -257,16 +259,9 @@ MAIN
 		width: 50%;
 		float: left;
 		padding-left: 7.4468085106383%;
-		@media screen and (max-width: 980px) {
-			padding-left: 6%;
-		}
-		@media screen and (max-width: 980px) {
-			padding-left: 6%;
-		}
 		@media screen and (max-width: 910px) {
-			padding: 0;
-			width: 100%;
-			margin-bottom: 2em;
+			width: 85%;
+			padding: 1em;
 		}
 		h3 {
 			@include h3(45px, 30px);
@@ -278,6 +273,9 @@ MAIN
 			width: 390px;
 			height: 70px;
 			margin-bottom: 20px;
+			@media screen and (max-width: 910px) {
+				left: 7px;
+			}
 		}
 		.carousel_container{
 			position: absolute;
@@ -365,8 +363,11 @@ MAIN
 				padding: 1em;
 				margin-left: -3px;
 				  box-shadow: 0 1px 3px 0 #ccc;
-				&>div{
-					margin-bottom: 25px;
+				&>div.cont-tabs-wrap{
+					width: 58.26558265582656%;
+					&>div{
+						margin-bottom: 25px;
+					}
 				}
 			}
 //			progress bar
@@ -376,7 +377,6 @@ MAIN
 				padding: 1px;
 				border-radius: 3px;
 				position: relative;
-				width: 214px;
 				.progress-label{
 					position: absolute;
 					font-size: 9px;
@@ -430,7 +430,6 @@ MAIN
 				border: 1px solid #dcdcdc;
 				height: 14px;
 				position: relative;
-				width: 215px;
 				.ui-slider-range{
 					height: 100%;
 					position: absolute;
@@ -447,6 +446,7 @@ MAIN
 					outline: none;
 				}
 			}
+//			stars
 			.stars{
 				ul{
 					li{
@@ -469,6 +469,9 @@ MAIN
 	} /* finish usersList */
 	.mainText{
 		clear: both;
+		@media screen and (max-width: 910px) {
+			padding: 1em;
+		}
 		h3{
 			@include h3(0, 15px);
 		}
