@@ -2,7 +2,7 @@
 .breadcrumb {
   list-style: none;
   overflow: hidden;
-  font: 18px Helvetica, Arial, Sans-Serif; }
+  font: 9px Verdana, Arial, Sans-Serif; }
 
 /* line 6, ../scss/steps.scss */
 .breadcrumb li {
